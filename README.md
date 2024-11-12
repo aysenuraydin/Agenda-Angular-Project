@@ -1,2 +1,5 @@
-# To-Do-Angular-Project
-Angular Project
+# Agenda-Angular-Project
+
+- Tailwind CSS
+- Angular
+- Firebase
