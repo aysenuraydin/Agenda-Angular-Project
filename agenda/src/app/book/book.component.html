@@ -1,0 +1,60 @@
+ <!-- Books -->
+ <div class="flex justify-center items-center lg:min-h-[60vh] md:min-h-[50vh] min-h-[45vh]">
+  <div id="prev" (click)="PageNumber(number-1)"><i class="fa-solid fa-angle-left arrow"></i></div>
+  <div class="bracket-box first lg:m-4 m-3">
+
+      <li [class.active]="i+1 == selectedMounth" [class.disable]="i+1 > selectedMounth" class="bracket list-none"
+        (click)="changeMounth(i+1)"
+        *ngFor="let month of months;let i = index">{{month}}</li>
+  </div>
+  <div class="base relative">
+      <div class="front h-full w-full absolute grid grid-cols-2 place-content-between -z-50">
+        <div class="h-[10rem] shadow-after rounded-book"></div>
+        <div class="h-[10rem] shadow-after rounded-book"></div>
+        <div class="h-[10rem] shadow-before rounded-book"></div>
+        <div class="h-[10rem] shadow-before rounded-book"></div>
+      </div>
+      <div class="page page-active-prev border">
+        <div class="outer">
+            <div class="flex w-full h-full lg:gap-5 gap-3 z-50">
+                <div class="flex flex-1 lg:gap-5  gap-3">
+                    <content-column [week]="[week[0]]" [row]="{top:[1,3],middle:[3,10],bottom:[10,13]}"></content-column>
+                    <content-column [week]="[week[1]]" [row]="{top:[1,4],middle:[4,11],bottom:[11,13]}"></content-column>
+                    <content-column [week]="[week[2]]" [row]="{top:[1,3],middle:[3,10],bottom:[10,13]}"></content-column>
+                </div>
+            </div>
+            <div class="md:text-sm text-[0.7rem] text-center lg:pt-5 md:pt-4 pt-3">51</div>
+        </div>
+      </div>
+      <div class="page page-active-next">
+        <div class="outer relative">
+            <div class="flex w-full h-full lg:gap-5 gap-3 z-50">
+              <div class="flex flex-1 lg:gap-5 gap-3">
+                <content-column [week]="[week[3]]" [row]="{top:[1,4],middle:[4,10],bottom:[10,13]}"></content-column>
+                <content-column [week]="[week[4]]" [row]="{top:[1,5],middle:[5,11],bottom:[11,13]}"></content-column>
+                <content-column [week]="[week[5],week[6]]" [row]="{top:[1,4],middle:[4,10,7],bottom:[10,13]}"></content-column>
+              </div>
+            </div>
+            <div class="md:text-sm text-[0.7rem] text-center lg:pt-5 md:pt-4 pt-3">52</div>
+        </div>
+      </div>
+      <div class="lg:w-32 w-20 absolute z-[150] bottom-0 curled-page">
+          <img src="/assets/img/previous.png" class="image-left absolute md:bottom-3 bottom-2 invisible" id="prev-curled">
+      </div>
+      <div class="lg:w-32 w-20 absolute bottom-0 right-0 z-[150] curled-page">
+          <img src="/assets/img/next.png" class="image-left absolute md:bottom-3 bottom-2 right-0 invisible" id="next-curled">
+      </div>
+      <div class="book-case"></div>
+  </div>
+  <div class="bracket-box last lg:m-4 m-3">
+      <li [class.active]="i+1 == selectedMounth" [class.disable]="i+1 < selectedMounth" class="bracket list-none"
+      (click)="changeMounth(i+1)"
+      *ngFor="let month of months;let i = index">{{month}}</li>
+  </div>
+  <div id="next" (click)="PageNumber(number+1)" ><i class="fa-solid fa-angle-right arrow"></i></div>
+</div>
+<div class="bg-purple-300 text-center">{{number}}</div>
+<div class="bg-purple-400 text-center g-[{{week[1].noteBottom.color}}]">{{selectedDay||'deneme'}}</div>
+<!-- Books -->
+
+

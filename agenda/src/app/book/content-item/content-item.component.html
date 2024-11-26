@@ -1,0 +1,8 @@
+
+  <div *ngIf="note.text" class="lg:text-3xl text-lg flex flex-col items-center h-full justify-center item-border rounded-lg">
+    <span>{{note.text.split(' ')[0]}}</span>
+    <span>{{note.text.split(' ')[1]}}</span>
+  </div>
+  <img *ngIf="note.imgUrl" src="{{note.imgUrl}}" class="rounded-lg">
+  <div *ngIf="note.color" class="h-full w-full rounded-lg" [ngStyle]="{'background-color': note.color}"></div>
+
