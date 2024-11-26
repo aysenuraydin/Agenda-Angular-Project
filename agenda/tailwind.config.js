@@ -22,9 +22,9 @@ module.exports = {
         'brittney-Signature': ['"Brittney Signature"', 'Georgia']
       },
       boxShadow: {
-        'after': '0px -25px 15px rgba(0, 0, 0, 0.26)',
+        'after': '0px -8px 15px rgba(0, 0, 0, 0.26)',
+        'before': '0px 25px 15px rgba(0, 0, 0, 0.56)',
         'after-sm': '0px -12px 8px rgba(0, 0, 0, 0.26)',
-        'before': '0px 25px 15px rgba(0, 0, 0, 0.26)',
         'before-sm': '0px 12px 8px rgba(0, 0, 0, 0.26)',
         'right':'45px 0 65px rgba(60, 60, 60, 0.8)',
         'right-sm':'30px 0 45px rgba(60, 60, 60, 0.8)',

@@ -1,0 +1,46 @@
+<div class="content-column grid-13">
+  <div class="content-item p-0"
+  [style.grid-row-start]="row.top[0]"
+  [style.grid-row-end]="row.top[1]">
+    <content-item [note]="week[0].noteTop"></content-item>
+  </div>
+
+  <div *ngIf="week.length==1" class="content-item item-border p-0"
+  [style.grid-row-start]="row.middle[0]"
+  [style.grid-row-end]="row.middle[1]">
+    <content-text [week]="week[0]"></content-text>
+  </div>
+
+  <div *ngIf="week.length==2" class="content-item item-border p-0"
+  [style.grid-row-start]="row.middle[0]"
+  [style.grid-row-end]="row.middle[2]">
+    <content-text [week]="week[0]"></content-text>
+  </div>
+
+ <div *ngIf="week.length==2" class="content-item item-border p-0"
+  [style.grid-row-start]="row.middle[2]"
+  [style.grid-row-end]="row.middle[1]">
+    <content-text [week]="week[1]"></content-text>
+  </div>
+
+  <div class="content-item p-0"
+  [style.grid-row-start]="row.bottom[0]"
+  [style.grid-row-end]="row.bottom[1]">
+    <div *ngIf="week.length==1 then first; else second"></div>
+    <ng-template #first>
+      <content-item [note]="week[0].noteBottom"></content-item>
+    </ng-template>
+
+    <ng-template #second>
+      <content-item [note]="week[1].noteBottom"></content-item>
+    </ng-template>
+  </div>
+</div>
+
+
+
+
+
+
+
+

@@ -73,19 +73,30 @@
   .bracket.disable {
     @apply invisible;
   }
+
   .content-column {
-    @apply flex-1 grid grid-cols-1 grid-rows-12 lg:gap-4 gap-3;
+    @apply h-full lg:gap-4 gap-3;
+    /* @apply flex-1 grid grid-cols-1 grid-rows-12 h-full lg:gap-4 gap-3; */
+  }
+  content-column {
+    @apply w-full h-full;
   }
   .content-item {
     @apply object-cover w-full max-h-full lg:rounded-xl rounded-md;
   }
+  .content-item img{
+    @apply object-cover w-full max-h-full;
+  }
   textarea {
-    @apply bg-[#00000000] lg:h-[calc(100%-4.5rem)] h-[calc(100%-3.5rem)] lg:w-44 w-26 resize-none text-[0.7rem] lg:text-[1rem];
+    @apply bg-[#00000000] lg:h-[calc(100%-5.2rem)] h-[calc(100%-4.2rem)] lg:w-40 md:w-32 w-26 resize-none text-[0.7rem] lg:text-[1rem] leading-5;
+  }
+  textarea:focus{
+    @apply outline-none;
   }
   .item-border {
     @apply border border-zinc-500 lg:p-3 p-1 text-center;
   }
-  .item-border.active {
+  .content-item div.active {
     @apply bg-gradient-to-b from-purple-300 via-[#00000000] to-[#00000000];
   }
 
@@ -99,16 +110,20 @@
           w-1/2 h-full left-1/2 origin-left-center
           rounded-[25em/4em] clip-path-ellipse
           bg-white
-          shadow-2xl
+          shadow-2xl border
           shadow-gray-700;
   }
-
-  .page-active-prev,
-  .page-active-prev .back {
-    @apply transform-rotateY-180 z-[102];
+  .page-before,
+  .page-after {
+    @apply bg-red-300 border border-red-500  rounded-book;
   }
+
+  .page-active-prev{
+    @apply   top-0 left-0;
+  }
+
   .page-active-next {
-    @apply z-[103] transition-page;
+    @apply z-[103];
   }
 
   .page > div,
@@ -132,7 +147,7 @@
     @apply py-10 md:py-12 lg:py-14 px-3 md:px-[1.2rem] lg:px-6;
   }
   .book-case {
-    @apply h-[94%] md:h-[94%] w-[102%] bg-purple-300 rounded-xl  mt-5 md:mt-7 -ml-2 md:-ml-2 lg:-ml-3 border border-purple-400 shadow-before;
+    @apply h-[94%] md:h-[94%] w-[102%] bg-purple-300 rounded-xl  mt-5 md:mt-7 -ml-2 md:-ml-2 lg:-ml-3 border border-purple-400 shadow-inner;
   }
   .arrow {
     @apply md:text-5xl text-3xl text-gray-400 border p-3 border-gray-400 rounded-xl;
@@ -147,6 +162,37 @@
     font-size: 10px !important;
     color: rgb(80, 80, 80);
   }
+  .grid-start-1 { grid-row-start: 1 ;}
+  .grid-start-2 { grid-row-start: 2 ;}
+  .grid-start-3 { grid-row-start: 3 ;}
+  .grid-start-4 { grid-row-start: 4 ;}
+  .grid-start-5 { grid-row-start: 5 ;}
+  .grid-start-6 { grid-row-start: 6 ;}
+  .grid-start-7 { grid-row-start: 7 ;}
+  .grid-start-8 { grid-row-start: 8 ;}
+  .grid-start-9 { grid-row-start: 9 ;}
+  .grid-start-10 { grid-row-start: 10 ;}
+  .grid-start-11 { grid-row-start: 11 ;}
+  .grid-start-12 { grid-row-start: 12 ;}
+  .grid-start-13 { grid-row-start: 13 ;}
+  .grid-end-1 { grid-row-end: 1; }
+  .grid-end-2 { grid-row-end: 2; }
+  .grid-end-3 { grid-row-end: 3; }
+  .grid-end-4 { grid-row-end: 4; }
+  .grid-end-5 { grid-row-end: 5; }
+  .grid-end-6 { grid-row-end: 6; }
+  .grid-end-7 { grid-row-end: 7; }
+  .grid-end-8 { grid-row-end: 8; }
+  .grid-end-9 { grid-row-end: 9; }
+  .grid-end-10 { grid-row-end: 10; }
+  .grid-end-11 { grid-row-end: 11; }
+  .grid-end-12 { grid-row-end: 12; }
+  .grid-end-13 { grid-row-end: 13; }
+  .grid-13 {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            grid-template-rows: repeat(12, minmax(0, 1fr));
+          }
 }
 @layer utilities {
   .transform-origin-left {
