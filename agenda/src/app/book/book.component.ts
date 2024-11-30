@@ -40,9 +40,6 @@ export class BookComponent implements OnInit {
     this.number = pageNumber;
   }
 
-  onSelect(id:number): void {
-    this.week.forEach(item => item.id ==id ? item.isActive = true: item.isActive=false);
-  }
   changeMounth(mounth:number): void {
     this.selectedMounth = mounth;
   }

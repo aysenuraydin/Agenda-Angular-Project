@@ -10,12 +10,19 @@ import { AgendaService } from '../../services/agenda.service';
 export class ContentTextComponent {
   @Input() week!:Note;
   weeks: Note[] = [];
+  days: string[] = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
 
   constructor(private agendaService:AgendaService){}
 
   onSelect(id:number): void {
-    this.weeks.forEach(item => item.id ==id ? item.isActive = true: item.isActive=false);
+    // this.weeks.forEach(item => item.id ==id ? item.isActive = true: item.isActive=false);
+
+    this.agendaService.dayActived(id);
+    // .subscribe(w => {
+    //   this.weeks = w;
+    // });
   }
+
   ngOnInit(): void {
     this.getWeeks();
   }
